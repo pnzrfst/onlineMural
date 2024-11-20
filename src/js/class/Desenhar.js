@@ -1,6 +1,5 @@
 
-
-class Desenhar{
+export default class Desenhar{
     constructor(canvas){
         this.canvas = document.getElementById('canvas');
         this.ctx = this.canvas.getContext('2d');
@@ -8,17 +7,6 @@ class Desenhar{
         this.x = 0;
         this.y = 0;
     
-    
-        this.#addEventListeners()
-    
-    }
-
-
-    #addEventListeners(){
-        this.canvas.addEventListener('mousedown', (event) => this.comecouDesenho(event));
-        this.canvas.addEventListener('mousemove', (event) => this.desenhando(event))
-        this.canvas.addEventListener('mouseup', (event) => this.parouDesenhar());
-        this.canvas.addEventListener('mouseout', (event) => this.parouDesenhar());
     }
 
     comecouDesenho(event){
@@ -43,5 +31,10 @@ class Desenhar{
     parouDesenhar(){
         this.isDrawing = false;
         this.ctx.closePath();
+    }
+
+
+    limparCanvas(){
+        this.ctx.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight)
     }
 }
