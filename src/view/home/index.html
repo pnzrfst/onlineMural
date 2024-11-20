@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Internet Mural | Express yourself</title>
+</head>
+<body>
+    <section width="100vw" height="100vh" id="canvasContainer">
+        <canvas id="canvas" width="1000" height="500" style="border: 2px solid black;"></canvas>
+    </section>
+    <section class="draw-bar">
+        <input type="color" id="inputColor">
+        <input type="range" id="brushSize">
+        <button id="clearCanva">Clear</button>
+        <div class="tools">
+            <select name="selectTool" id="selectTool">
+                <option value="brush">Brush</option>
+                <option value="eraser">Eraser</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+    </section>
+
+   <script type="module" src="/src/js/bridge/preloadDesenhar.js"></script>
+</body>
+</html>
